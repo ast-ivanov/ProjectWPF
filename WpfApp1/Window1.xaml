@@ -1,0 +1,94 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window1" MinHeight="500" MinWidth="600" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Menu Background="White" Grid.ColumnSpan="3" Margin="5">
+            <MenuItem Header="Таблица">
+                <MenuItem Header="Новая"></MenuItem>
+                <MenuItem Header="Сохранить"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Настройка"></MenuItem>
+        </Menu>
+
+        <TabControl Grid.Row="1" Margin="5">
+            <TabItem Header="Канал 1">
+                <TextBlock>рпаврвапавполавлоавп</TextBlock>
+            </TabItem>
+            <TabItem Header="Канал 2">
+                <TextBlock>kakakakak</TextBlock>
+            </TabItem>
+        </TabControl>
+        <GroupBox Grid.Column="1" Grid.Row="1" Margin="5" Header="Панель состояния прибора" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel>
+                <GroupBox Header="Режим измерения">
+                    <StackPanel>
+                        <RadioButton IsChecked="True">L</RadioButton>
+                        <RadioButton>tg</RadioButton>
+                        <RadioButton>C</RadioButton>
+                        <RadioButton>tg</RadioButton>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Предел измерений">
+                    <StackPanel>
+                        <ComboBox>
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Margin="20">Шкала</TextBlock>
+                            <StackPanel>
+                                <RadioButton IsChecked="True">0-10</RadioButton>
+                                <RadioButton>1-3</RadioButton>
+                                <RadioButton>3-10</RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Канал">
+                    <StackPanel>
+                        <RadioButton IsChecked="True">Канал 1</RadioButton>
+                        <RadioButton>Канал 2</RadioButton>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Режим измерения">
+                    <StackPanel>
+                        <CheckBox>Терморегулировка</CheckBox>
+                        <ScrollViewer Width="Auto">
+                            <TextBox>30</TextBox>
+                        </ScrollViewer>
+                    </StackPanel>
+                </GroupBox>
+                <Button Margin="10">Запись</Button>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <GroupBox Margin="5" Header="Панель показаний прибора">
+                <StackPanel>
+                    <TextBlock Margin="0, 10, 0, 10" HorizontalAlignment="Center">Измеренная величина</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Background="AliceBlue" Width="100" Height="40" TextAlignment="Center" FontSize="20">--e--</TextBlock>
+                    <TextBlock Margin="0, 10, 0, 10" HorizontalAlignment="Center">Температура термокамеры</TextBlock>
+                    <TextBlock Margin="0, 0, 0, 10" HorizontalAlignment="Center" Background="AliceBlue" Width="100" Height="40" TextAlignment="Center" FontSize="20">-- 'C</TextBlock>
+                </StackPanel>
+            </GroupBox>
+            <TextBox Height="100" Margin="5"/>
+            <CheckBox Margin="5">Мониторинг</CheckBox>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <Button Margin="20,0,20,0">Чтение параметров прибора</Button>
+                <Button>Выход</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

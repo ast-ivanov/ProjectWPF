@@ -31,5 +31,16 @@ namespace WpfApp1
             window.Show();
             Close();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void ComSettings_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 window = new Window2();
+            window.Show();
+        }
     }
 }

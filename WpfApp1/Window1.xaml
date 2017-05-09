@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Window1" MinHeight="500" MinWidth="600" Height="600" Width="800">
+        
+        Title="Window1" MinHeight="600" MinWidth="800" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -25,18 +26,39 @@
             <MenuItem Header="Настройка"></MenuItem>
         </Menu>
 
-        <TabControl Grid.Row="1" Margin="5">
+        <TabControl Grid.Column="0" Grid.Row="1" Margin="5">
             <TabItem Header="Канал 1">
-                <TextBlock>рпаврвапавполавлоавп</TextBlock>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Grid.Row="0" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header=""/>
+                            <DataGridTextColumn Header="Т, °C"/>
+                            <DataGridTextColumn Header="R, Ом"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Grid.Row="1" Grid.Column="0" Margin="10, 0, 10, 0" Padding="5" VerticalAlignment="Center">Добавить</Button>
+                    <Button Grid.Row="2" Grid.Column="0" Margin="10, 0, 10, 0" Padding="5" VerticalAlignment="Center">Удалить</Button>
+                    <Button Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="10, 0, 10, 0" Padding="5" VerticalAlignment="Center">Создать список</Button>
+                </Grid>
             </TabItem>
             <TabItem Header="Канал 2">
                 <TextBlock>kakakakak</TextBlock>
             </TabItem>
         </TabControl>
         <GroupBox Grid.Column="1" Grid.Row="1" Margin="5" Header="Панель состояния прибора" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <StackPanel>
+            <StackPanel Margin="0,10">
                 <GroupBox Header="Режим измерения">
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <RadioButton IsChecked="True">L</RadioButton>
                         <RadioButton>tg</RadioButton>
                         <RadioButton>C</RadioButton>
@@ -44,12 +66,12 @@
                     </StackPanel>
                 </GroupBox>
                 <GroupBox Header="Предел измерений">
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <ComboBox>
                         </ComboBox>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="10" Orientation="Horizontal">
                             <TextBlock VerticalAlignment="Center" Margin="20">Шкала</TextBlock>
-                            <StackPanel>
+                            <StackPanel VerticalAlignment="Center">
                                 <RadioButton IsChecked="True">0-10</RadioButton>
                                 <RadioButton>1-3</RadioButton>
                                 <RadioButton>3-10</RadioButton>
@@ -58,20 +80,27 @@
                     </StackPanel>
                 </GroupBox>
                 <GroupBox Header="Канал">
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <RadioButton IsChecked="True">Канал 1</RadioButton>
                         <RadioButton>Канал 2</RadioButton>
                     </StackPanel>
                 </GroupBox>
                 <GroupBox Header="Режим измерения">
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <CheckBox>Терморегулировка</CheckBox>
-                        <ScrollViewer Width="Auto">
+                        <StackPanel Margin="10" Orientation="Horizontal">
+                            <TextBox x:Name="txtNum" Width="50" Text="0" />
+                            <StackPanel>
+                                <Button x:Name="cmdUp" Content="˄" Width="20" Height="10" />
+                                <Button x:Name="cmdDown" Content="˅" Width="20" Height="10" />
+                            </StackPanel>
+                        </StackPanel>
+                        <!--<ScrollViewer Width="Auto">
                             <TextBox>30</TextBox>
-                        </ScrollViewer>
+                        </ScrollViewer>-->
                     </StackPanel>
                 </GroupBox>
-                <Button Margin="10">Запись</Button>
+                <Button Margin="10" Padding="5">Запись</Button>
             </StackPanel>
         </GroupBox>
         <StackPanel Grid.Column="2" Grid.Row="1">
@@ -83,11 +112,11 @@
                     <TextBlock Margin="0, 0, 0, 10" HorizontalAlignment="Center" Background="AliceBlue" Width="100" Height="40" TextAlignment="Center" FontSize="20">-- 'C</TextBlock>
                 </StackPanel>
             </GroupBox>
-            <TextBox Height="100" Margin="5"/>
+            <TextBox x:Name="TextBoxInfo" Height="100" Margin="5"/>
             <CheckBox Margin="5">Мониторинг</CheckBox>
             <StackPanel Margin="5" Orientation="Horizontal">
-                <Button Margin="20,0,20,0">Чтение параметров прибора</Button>
-                <Button>Выход</Button>
+                <Button x:Name="ReadBtn" Margin="0,0,20,0" Padding="5">Чтение параметров прибора</Button>
+                <Button Padding="5">Выход</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

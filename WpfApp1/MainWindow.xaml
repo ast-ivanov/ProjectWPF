@@ -11,10 +11,12 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         
-        <Button Grid.Row="0" Click="Start_Click" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Tw Cen MT" Width="100"/>
-        <Button Grid.Row="1" Content="Settings" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" FontFamily="Tw Cen MT" FontSize="18"/>
+        <Button Grid.Row="0" Click="Start_Click" Content="Состояние прибора" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" FontSize="18" FontFamily="Tw Cen MT" Width="200"/>
+        <Button Grid.Row="1" Click="ComSettings_Click" Content="Установка COM PORT" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontFamily="Tw Cen MT" FontSize="18"/>
+        <Button Grid.Row="2" Click="Exit_Click" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontFamily="Tw Cen MT" FontSize="18" />
 
     </Grid>
 </Window>

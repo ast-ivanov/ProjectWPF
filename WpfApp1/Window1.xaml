@@ -39,11 +39,11 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid Grid.Row="0" Grid.ColumnSpan="2">
+                    <DataGrid Name="datag" Grid.Row="0" Grid.ColumnSpan="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header=""/>
                             <DataGridTextColumn Header="Т, °C"/>
-                            <DataGridTextColumn Header="R, Ом"/>
+                            <DataGridTextColumn Header="L"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button Grid.Row="1" Grid.Column="0" Margin="10, 0, 10, 0" Padding="5" VerticalAlignment="Center">Добавить</Button>
@@ -59,10 +59,10 @@
             <StackPanel Margin="0,10">
                 <GroupBox Header="Режим измерения">
                     <StackPanel Margin="10">
-                        <RadioButton IsChecked="True">L</RadioButton>
-                        <RadioButton>tg</RadioButton>
-                        <RadioButton>C</RadioButton>
-                        <RadioButton>tg</RadioButton>
+                        <RadioButton Name="L" IsChecked="True" Click="RadioButton_Click">L</RadioButton>
+                        <RadioButton Name="tg" Click="RadioButton_Click">tg</RadioButton>
+                        <RadioButton Name="C" Click="RadioButton_Click">C</RadioButton>
+                        <RadioButton Name="tgr" Click="RadioButton_Click">tg</RadioButton>
                     </StackPanel>
                 </GroupBox>
                 <GroupBox Header="Предел измерений">

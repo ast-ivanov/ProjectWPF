@@ -44,6 +44,12 @@ namespace WpfApp1
             InitializeComponent();
         }
 
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            string name = (sender as RadioButton).Name;
+            datag.Columns[2].Header = name;
+        }
+
         //private void PortDefault()
         //{
         //    String xmlString = File.ReadAllText("parameters.xml");
@@ -350,7 +356,7 @@ namespace WpfApp1
         //    comboBox2.SelectedIndex = num;
         //    textBox1.AppendText(result);
         //}
-        
+
         //// Отправка на устройство
         //private void Transmit()
         //{
